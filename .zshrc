@@ -3,6 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/jessicadeen/.oh-my-zsh
+export TERM="xterm-256color"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -130,7 +131,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
 alias config='/usr/bin/git --git-dir=/Users/jessicadeen/.cfg/ --work-tree=/Users/jessicadeen'
-alias EDITOR=nvim
+# alias EDITOR=nvim
 
 #Powerline
 if [ -d "$HOME/Library/Python/2.7/bin" ]; then
@@ -141,6 +142,12 @@ repository_root="$HOME/Library/Python/2.7/lib/python/site-packages"
 . $repository_root/powerline/bindings/zsh/powerline.zsh
 
 export PATH=$PATH:/Users/jessicadeen/bin
+export GOPATH=/Users/jessicadeen/go 
+export PATH=$GOPATH/bin:$PATH
+
+#acs-engine
+alias acse="$GOPATH/src/github.com/Azure/acs-engine/bin/acs-engine"
+
 autoload bashcompinit && bashcompinit
 source '/Users/jessicadeen/lib/azure-cli/az.completion'
 

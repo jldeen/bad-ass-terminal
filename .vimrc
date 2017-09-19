@@ -1,13 +1,9 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-
 call vundle#begin()
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-" Keep Plugin commands between vundle#begin/end.
 Plugin 'tpope/vim-fugitive'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -17,6 +13,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'nightsense/seabird'
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()            " required
 
 filetype plugin indent on    " required
@@ -45,5 +42,17 @@ set laststatus=2
 " ------
 
 " Nerdtree Settings
+set mouse=a
 autocmd VimEnter * NERDTree | wincmd p
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+let NERDTreeQuitOnOpen = 1
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+set ttyfast
+set lazyredraw
+map tt :NERDTreeToggle<CR> "double click t button to toggle NerdTree
+map [] :TagbarToggle<CR> "click [] to toggle Tagbar
