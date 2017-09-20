@@ -8,8 +8,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'dracula/vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'nightsense/seabird'
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
@@ -40,6 +38,9 @@ let g:airline_powerline_fonts = 1
 " ------
 set laststatus=2
 " ------
+
+" Set line number
+set number
 
 " Nerdtree Settings
 set mouse=a
